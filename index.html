@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>WQRT-12 — NIGHT DUTY</title>
+  <link rel="stylesheet" href="css/station.css" />
+</head>
+<body>
+  <div id="boot" class="overlay">
+    <div class="boot-card" id="boot-card"></div>
+  </div>
+
+  <div id="app" class="hidden">
+    <header id="topbar">
+      <div class="brand">WQRT-12<small>HARTSFIELD VALLEY</small></div>
+      <div class="vfd" id="clock">11:47:00 PM</div>
+      <div class="status-pills">
+        <div class="pill on" id="pill-tx">TX ON</div>
+        <div class="pill on" id="pill-stl">STL LOCK</div>
+        <div class="pill" id="pill-sat">SAT DARK</div>
+        <div class="pill" id="pill-quiet">QUIET HOUR</div>
+        <div class="pill" id="pill-phone">PHONE</div>
+      </div>
+    </header>
+
+    <section id="monitors">
+      <div class="monitor" id="mon-pgm">
+        <div class="monitor-meta">
+          <span>PROGRAM — ON AIR</span>
+          <span class="tally hot" id="tally-pgm">PGM</span>
+        </div>
+        <div class="screen-wrap">
+          <div class="screen" id="pgm" data-mon="pgm">
+            <div class="scene" id="pgm-scene"></div>
+            <div class="scanlines"></div>
+            <div class="vignette"></div>
+            <div class="noise"></div>
+            <div class="flash" id="pgm-flash"></div>
+            <div class="cc" id="pgm-cc"></div>
+            <div class="crawl-wrap" id="pgm-crawl-wrap"><div class="crawl-text" id="pgm-crawl"></div></div>
+            <div class="look-warn" id="pgm-look">DO NOT WATCH THIS FEED</div>
+          </div>
+        </div>
+        <div class="src-label" id="pgm-label">VTR 1</div>
+      </div>
+      <div class="monitor" id="mon-pvw">
+        <div class="monitor-meta">
+          <span>PREVIEW</span>
+          <span class="tally prev" id="tally-pvw">PVW</span>
+        </div>
+        <div class="screen-wrap">
+          <div class="screen" id="pvw" data-mon="pvw">
+            <div class="scene" id="pvw-scene"></div>
+            <div class="scanlines"></div>
+            <div class="vignette"></div>
+            <div class="noise"></div>
+            <div class="flash" id="pvw-flash"></div>
+            <div class="cc" id="pvw-cc"></div>
+            <div class="look-warn" id="pvw-look">DO NOT WATCH THIS FEED</div>
+          </div>
+        </div>
+        <div class="src-label" id="pvw-label">BARS</div>
+      </div>
+    </section>
+
+    <section id="switcher">
+      <div class="sw-row" id="keys"></div>
+    </section>
+
+    <section id="lower">
+      <div class="panel">
+        <h3>PROGRAM LOG</h3>
+        <div id="log"></div>
+        <div class="log-actions">
+          <button class="tiny" id="btn-log-ghost">LOG ANOMALY</button>
+          <button class="tiny" id="btn-note">RAY'S NOTE</button>
+          <button class="tiny" id="btn-schedule">CLIP</button>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>PHONE / IFB</h3>
+        <div class="phone-lcd" id="phone-lcd">LINE IDLE<br>EXT 12 — MASTER CONTROL</div>
+        <div class="phone-actions">
+          <button class="answer" id="btn-answer">ANSWER</button>
+          <button class="ignore" id="btn-ignore">IGNORE</button>
+          <button id="btn-hang">HANG UP</button>
+          <button id="btn-talkback">TALKBACK CAM3</button>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>RACK</h3>
+        <div class="rack-grid">
+          <div class="meter-box">TRANSMITTER FWD
+            <div class="meter" id="tx-meter"><span></span></div>
+          </div>
+          <button id="btn-gray">LEFT DRAWER</button>
+          <button id="btn-dump" class="danger-ish">DUMP BLACK</button>
+          <button id="btn-tx">TX KILL</button>
+          <button id="btn-leave">DOOR</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="paper" class="overlay dim hidden">
+    <div class="paper" id="paper-body"></div>
+  </div>
+  <div id="confirm" class="confirm hidden">
+    <div class="confirm-box" id="confirm-box"></div>
+  </div>
+  <div id="end" class="overlay hidden">
+    <div class="end-card" id="end-card"></div>
+  </div>
+  <div class="debug" id="debug">
+    <label>CLOCK <input type="range" id="dbg-clock" min="0" max="18780" value="0" /></label>
+    <span id="dbg-t"></span>
+  </div>
+
+  <script src="js/audio.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
